@@ -282,7 +282,7 @@ Workbench.prototype.compile = function(contracts, dir, cb) {
 
 Workbench.prototype.start = function(contracts, cb) {
   var self = this;
-  this.sandbox.start(this.ethereumJsonPath, function (err) {
+  this.sandbox.start(this.ethereumJsonPath, this.specificSolc, function (err) {
     if (err) return cb(err);
     Object.keys(contracts).forEach(contractName => {
       contracts[contractName].setProvider(self.sandbox.web3.currentProvider);
