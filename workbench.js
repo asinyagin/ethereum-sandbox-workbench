@@ -434,7 +434,7 @@ Workbench.prototype.startTesting = function(contracts, cb) {
 
   var name = '[' + contracts.join(', ') + '] Contracts Testing';
   describe(name, function() {
-    this.timeout(60000);
+    this.timeout(180000);
     before(function(done) {
       var solcVersion = self.solcVersion;
       if (solcVersion == 'latestStable') {
